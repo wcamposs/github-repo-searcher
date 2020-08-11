@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { BorderlessButton, TextInput, RectButton, ScrollView, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
@@ -16,16 +16,23 @@ import { RepositoryProps } from '../RepositoryDetailsPage';
 // USAR "KEYBOARD AVOIDING VIEW" AO SUBIR O TECLADO
 
 
-const SearchPage: React.FunctionComponent<RepositoryProps> = ({ id, name, owner }) => {
+const SearchPage: React.FunctionComponent<RepositoryProps> = ({ id, name, owner, description }) => {
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
     const [repositories, setRepositories] = useState([]);
     const { navigate } = useNavigation();
+    const [mounted, setMounted] = useState(false);
 
-    async function handleGetPublicRepositories() {
-        const response = await api.get('repositories');
+    useEffect(() => {
+        function getPublicRepositories() {
+            api.get('repositories')
+            .then(response => setRepositories(response.data))
+            .finally(() => setMounted(true))
+        }
 
-        setRepositories(response.data);
-    }
+        if(!mounted) {
+            getPublicRepositories()
+        }
+    }, [mounted]);
 
     function handleToggleFiltersVisible() {
         setIsFiltersVisible(!isFiltersVisible);
@@ -37,9 +44,12 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({ id, name, owner 
 
     async function handleFiltersSubmit() {
 
-
         setIsFiltersVisible(false);
     }
+
+    if(!mounted) {
+        return null;
+    };
 
     return (
         <View style={styles.container} >
@@ -82,8 +92,8 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({ id, name, owner 
                     return (
                         <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
                             <ItemComponent 
-                                key={id}
-                                name={name}
+                                key={repository.id}
+                                name={repository.name}
                             />
                         </TouchableWithoutFeedback>
                     );
