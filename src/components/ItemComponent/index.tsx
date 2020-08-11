@@ -6,12 +6,12 @@ import { RepositoryProps } from '../../pages/RepositoryDetailsPage';
 import styles from './styles';
 
 
-const ItemComponent: React.FunctionComponent<RepositoryProps> = ({ name, owner }) => {
+const ItemComponent: React.FunctionComponent<RepositoryProps> = ({ repository }) => {
     return (
         <View style={styles.container}>
             <View style={styles.repository}>
-                <Text style={styles.repositoryName}>{name}</Text>
-                <Text style={styles.repositoryOwner}>{owner.login}</Text>
+                <Text style={styles.repositoryName}>{repository.name}</Text>
+                <Text style={styles.repositoryOwner}>{repository.owner.login}</Text>
             </View>
         </View>
     );

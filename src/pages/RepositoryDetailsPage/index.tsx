@@ -16,7 +16,9 @@ export interface RepositoryProps {
     description: string;
 }
 
-const RepositoryDetailsPage: React.FunctionComponent<RepositoryProps> = ({ name, owner, description }) => {
+const RepositoryDetailsPage: React.FunctionComponent<RepositoryProps> = ({ route }) => {
+    const { repository } = route.params;
+
     return (
         <View style={styles.container}>
             <HeaderComponent title="Detalhes do Repositório" />
@@ -31,18 +33,18 @@ const RepositoryDetailsPage: React.FunctionComponent<RepositoryProps> = ({ name,
                 <View style={styles.profile}>
                     <Image
                         style={styles.avatar}
-                        source={{ uri: `http://github.com/${owner.login}.png` }}
+                        source={{ uri: `http://github.com/${repository.owner.login}.png` }}
                     />
 
                     <View style={styles.repositoryOwnerContainer} >
-                        <Text style={styles.repositoryOwner} >{owner.login}</Text>
+                        <Text style={styles.repositoryOwner} >{repository.owner.login}</Text>
                     </View>
                 </View>
 
-                <Text style={styles.repositoryName} >{name}</Text>
+                <Text style={styles.repositoryName} >{repository.name}</Text>
 
                 <Text style={styles.repositoryDescription} >
-                    {description}
+                    {repository.description}
                 </Text>
             </ScrollView>
         </View>
