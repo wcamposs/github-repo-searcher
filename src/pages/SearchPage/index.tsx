@@ -7,13 +7,25 @@ import { useNavigation } from '@react-navigation/native';
 import HeaderComponent from '../../components/HeaderComponent';
 import ItemComponent from '../../components/ItemComponent';
 
+import api from '../../services/api';
+
 import styles from './styles';
+import { RepositoryProps } from '../RepositoryDetailsPage';
+
 
 // USAR "KEYBOARD AVOIDING VIEW" AO SUBIR O TECLADO
 
-function SearchPage() {
+
+const SearchPage: React.FunctionComponent<RepositoryProps> = ({ id, name, owner }) => {
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+    const [repositories, setRepositories] = useState([]);
     const { navigate } = useNavigation();
+
+    async function handleGetPublicRepositories() {
+        const response = await api.get('repositories');
+
+        setRepositories(response.data);
+    }
 
     function handleToggleFiltersVisible() {
         setIsFiltersVisible(!isFiltersVisible);
@@ -24,14 +36,14 @@ function SearchPage() {
     }
 
     async function handleFiltersSubmit() {
-        
+
 
         setIsFiltersVisible(false);
     }
 
-    return(
+    return (
         <View style={styles.container} >
-            <HeaderComponent 
+            <HeaderComponent
                 title="Buscar Repositórios"
                 headerRight={(
                     <BorderlessButton onPress={handleToggleFiltersVisible}>
@@ -49,16 +61,16 @@ function SearchPage() {
                             placeholderTextColor="#595857"
                         />
 
-                        <RectButton 
+                        <RectButton
                             //onPress={handleFiltersSubmit} 
                             style={styles.submitButton}>
-                            
-                            <Text style={styles.submitButtonText}>Filtrar</Text>
+
+                            <Text style={styles.submitButtonText}>Buscar</Text>
                         </RectButton>
                     </View>
-                )}        
+                )}
             </HeaderComponent>
-            
+
             <ScrollView
                 style={styles.searchPage}
                 contentContainerStyle={{
@@ -66,25 +78,16 @@ function SearchPage() {
                     paddingBottom: 16,
                 }}
             >
-                <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
-                    <ItemComponent />
-                </TouchableWithoutFeedback>
-
-                <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
-                    <ItemComponent />
-                </TouchableWithoutFeedback>
-                
-                <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
-                    <ItemComponent />
-                </TouchableWithoutFeedback>
-
-                <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
-                    <ItemComponent />
-                </TouchableWithoutFeedback>
-
-                <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
-                    <ItemComponent />
-                </TouchableWithoutFeedback>
+                {repositories.map((repository: RepositoryProps) => {
+                    return (
+                        <TouchableWithoutFeedback onPress={handleToggleNavigateToRepositoryDetails}>
+                            <ItemComponent 
+                                key={id}
+                                name={name}
+                            />
+                        </TouchableWithoutFeedback>
+                    );
+                })}
             </ScrollView>
         </View>
     );

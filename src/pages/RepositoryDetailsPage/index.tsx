@@ -6,8 +6,17 @@ import HeaderComponent from '../../components/HeaderComponent';
 import styles from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
 
+export interface RepositoryProps {
+    id: number;
+    name: string;
+    owner: {
+        id: number;
+        login: string;
+    }
+    description: string;
+}
 
-function RepositoryDetailsPage() {
+const RepositoryDetailsPage: React.FunctionComponent<RepositoryProps> = ({ name, owner, description }) => {
     return (
         <View style={styles.container}>
             <HeaderComponent title="Detalhes do Repositório" />
@@ -22,28 +31,18 @@ function RepositoryDetailsPage() {
                 <View style={styles.profile}>
                     <Image
                         style={styles.avatar}
-                        source={{ uri: 'http://github.com/wcamposs.png' }}
+                        source={{ uri: `http://github.com/${owner.login}.png` }}
                     />
 
                     <View style={styles.repositoryOwnerContainer} >
-                        <Text style={styles.repositoryOwner} >wcamposs</Text>
+                        <Text style={styles.repositoryOwner} >{owner.login}</Text>
                     </View>
                 </View>
 
-                <Text style={styles.repositoryName} >tech-challenge/react-native-tech-challenge</Text>
+                <Text style={styles.repositoryName} >{name}</Text>
 
                 <Text style={styles.repositoryDescription} >
-                    Tech challenge offered by DeliveryMuch
-                    {'\n'}
-                    {'\n'}
-                    Technologies used:
-                    {'\n'}
-                    - React native
-                    {'\n'}
-                    - Expo
-                    {'\n'}
-                    - Axios
-
+                    {description}
                 </Text>
             </ScrollView>
         </View>
