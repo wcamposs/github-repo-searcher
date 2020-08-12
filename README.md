@@ -23,18 +23,22 @@ git clone git@github.com:wcamposs/github-repo-searcher.git
 ```
 
 **Installation and configuration:**
+
 Install and configure the environment to run the application, following [this tutorial](https://medium.com/@jeancabral/instalando-e-configurando-react-native-no-ubuntu-18-04-e3329ac090a0).
 
 **Expo Installation:**
+
 Expo is used to serve the application and run on both a physical device and an emulator. Install it using the following command on the terminal:
 ```
 npm install expo-cli --global
 ```
 
 **Yarn Installation (optional):**
+
 Yarn is a dependency manager, it is used to install the dependencies required for the project (it has the same role as **npm**). If you want to use it (personally I prefer), install it through [this tutorial](https://classic.yarnpkg.com/en/docs/install/#debian-stable).
 
 **Project dependencies installation:**
+
 To install the dependency packages used in this project, follow the steps below:
 
 After cloning the repository, access its root folder using the terminal and execute one of the commands below according to the package manager you use (npm or yarn):
@@ -66,6 +70,7 @@ npm start
 ```
 
 #### Running Application via Interface:
+
 A new tab will be opened in the default browser with some options to run the project using Expo.
 
 **PS:** Make sure your phone and computer are on the same WiFi!
@@ -80,15 +85,18 @@ A new tab will be opened in the default browser with some options to run the pro
 3. If you want to run the project on a physical device (Android or iOS):
 
 **Android**
+
 - install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the lower left corner on the tab that was automatically opened in the browser using the device's camera.
 
 **iOS:**
+
 - Copy the url shown in the browser above the QRCode.
 - Open Expo App in your mobile device, and click on the second tab 'Explore' and enter the URL that starts with exp://192.168... This is a local connection to your computer. You will see your app running in a minute.
 
 (I personally recommend that the project be executed on a mobile device, regardless of whether it is a physical device or an emulator).
 
 #### Running Application via Terminal:
+
 Just as a new tab is executed by the browser, the same information is also displayed in the terminal, to execute it, type the command for the desired option:
 
 1. If you want to run on an Android emulator, type on terminal:
@@ -104,6 +112,7 @@ i
 3. If you want to run the project on a physical device (Android or iOS):
 
 **Android**
+
 - install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the terminal using the device's camera.
 
 
