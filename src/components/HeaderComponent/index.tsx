@@ -1,5 +1,5 @@
 import React, { ReactNode, Children } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";

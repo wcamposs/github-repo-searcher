@@ -2,7 +2,8 @@
 
 Application developed in React Native using Typescript for Delivery Much's technical challenge.
 
-**The Application aims to:** 
+**The Application aims to:**
+
 1. List public Github repositories
 2. Searching public Github repositories
 3. View repository details, such as:
@@ -15,7 +16,7 @@ Application developed in React Native using Typescript for Delivery Much's techn
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-**Cloning the repository:**  <br/>
+**Cloning the repository:** <br/>
 Assuming you have your machine pre-configured to clone github repositories (if you have not configured it, visit [this documentation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)), clone the repository using the following command in the terminal:
 
 ```
@@ -29,6 +30,7 @@ Install and configure the environment to run the application, following [this tu
 **Expo Installation:**
 
 Expo is used to serve the application and run on both a physical device and an emulator. Install it using the following command on the terminal:
+
 ```
 npm install expo-cli --global
 ```
@@ -44,11 +46,13 @@ To install the dependency packages used in this project, follow the steps below:
 After cloning the repository, access its root folder using the terminal and execute one of the commands below according to the package manager you use (npm or yarn):
 
 1. Using Yarn:
+
 ```
 yarn install
 ```
 
 2. Using NPM:
+
 ```
 npm install
 ```
@@ -60,11 +64,13 @@ After installing the facilities, the project can be considered configured and re
 Assuming you are in the root directory via a terminal, run the following command to run Expo:
 
 1. Using Yarn:
+
 ```
 yarn start
 ```
 
 2. Using NPM:
+
 ```
 npm start
 ```
@@ -76,10 +82,12 @@ A new tab will be opened in the default browser with some options to run the pro
 **PS:** Make sure your phone and computer are on the same WiFi!
 
 1. If you want to run on an Android or iOS emulator, make sure that the virtual device is configured and running, then select one of the options below in the expo interface via browser:
+
 - Run on Android device / emulator
 - Run on iOS simulator
 
 1. If you want to run through the browser, select the option:
+
 - Run in web browser
 
 3. If you want to run the project on a physical device (Android or iOS):
@@ -100,11 +108,13 @@ A new tab will be opened in the default browser with some options to run the pro
 Just as a new tab is executed by the browser, the same information is also displayed in the terminal, to execute it, type the command for the desired option:
 
 1. If you want to run on an Android emulator, type on terminal:
+
 ```
 a
 ```
 
 2. If you want to run on an iOS emulator, type on terminal (this option will appear only if you have an iOS device configured):
+
 ```
 i
 ```
@@ -115,14 +125,13 @@ i
 
 - install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the terminal using the device's camera.
 
-
 ## Running the tests
 
 Work in progress...
 
 ## Built With
 
-* [React Native](https://reactnative.dev/) - The framework used
-* [Expo](https://expo.io/) - Open-source platform for making universal native apps for Android, iOS, and web.
-* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
-* [Gihub REST Api v3](https://developer.github.com/v3/) - Used to get public repositories list and query in public repositories.
+- [React Native](https://reactnative.dev/) - The framework used
+- [Expo](https://expo.io/) - Open-source platform for making universal native apps for Android, iOS, and web.
+- [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+- [Gihub REST Api v3](https://developer.github.com/v3/) - Used to get public repositories list and query in public repositories.

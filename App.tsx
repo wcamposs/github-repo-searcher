@@ -1,10 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { Fragment } from 'react';
-import { AppLoading } from 'expo';
+import { StatusBar } from "expo-status-bar";
+import React, { Fragment } from "react";
+import { AppLoading } from "expo";
 
-import { useFonts, Archivo_400Regular, Archivo_700Bold } from '@expo-google-fonts/archivo';
+import {
+  useFonts,
+  Archivo_400Regular,
+  Archivo_700Bold,
+} from "@expo-google-fonts/archivo";
 
-import AppStack from './src/routes/AppStack';
+import AppStack from "./src/routes/AppStack";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -12,18 +16,15 @@ export default function App() {
     Archivo_700Bold,
   });
 
-  if(!fontsLoaded) {
-    return(
-      <AppLoading />
-    );
+  if (!fontsLoaded) {
+    return <AppLoading />;
   } else {
     return (
-      <Fragment >
-        <StatusBar style="auto"/>
-  
+      <Fragment>
+        <StatusBar style="auto" />
+
         <AppStack />
       </Fragment>
     );
   }
 }
-
