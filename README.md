@@ -2,7 +2,7 @@
 
 Application developed in React Native using Typescript for Delivery Much's technical challenge.
 
-The Application aims to:
+**The Application aims to:**  <br/>
 1. List public Github repositories
 2. Searching public Github repositories
 3. View repository details, such as:
