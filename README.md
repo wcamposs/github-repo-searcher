@@ -1,5 +1,7 @@
 # Github Repo Searcher
 
+## Description:
+
 Application developed in React Native using Typescript for Delivery Much's technical challenge.
 
 **The Application aims to:** 
@@ -53,9 +55,9 @@ yarn install
 npm install
 ```
 
-After installing the facilities, the project can be considered configured and ready to run.
+After installation, the project can be considered configured and ready to run.
 
-### Getting Started
+## Getting Started:
 
 Assuming you are in the root directory via a terminal, run the following command to run Expo:
 
@@ -69,7 +71,14 @@ yarn start
 npm start
 ```
 
-#### Running Application via Interface:
+## Running Application:
+
+The application can be executed in two ways:
+
+- Using visual interface (that opens automatically after **yarn start** or **npm start**)
+- Using commands via terminal (the options will be shown after execute **yarn start** or **npm start**)
+
+### Running Application via Interface:
 
 A new tab will be opened in the default browser with some options to run the project using Expo.
 
@@ -93,7 +102,7 @@ A new tab will be opened in the default browser with some options to run the pro
 
 (I personally recommend that the project be executed on a mobile device, regardless of whether it is a physical device or an emulator).
 
-#### Running Application via Terminal:
+### Running Application via Terminal:
 
 Just as a new tab is executed by the browser, the same information is also displayed in the terminal, to execute it, type the command for the desired option:
 
@@ -113,11 +122,11 @@ i
 
 - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode displayed in the terminal using the device's camera.
 
-## Running the tests
+## Running the tests:
 
 Work in progress...
 
-## Built With
+## Built With:
 
 * [React Native](https://reactnative.dev/) - The framework used
 * [Expo](https://expo.io/) - Open-source platform for making universal native apps for Android, iOS, and web.
