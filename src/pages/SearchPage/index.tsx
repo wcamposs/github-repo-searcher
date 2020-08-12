@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
+import { ActivityIndicator, View, Text } from "react-native";
 import {
   BorderlessButton,
   TextInput,
@@ -31,6 +31,7 @@ const SearchPage: React.FunctionComponent<RepositoryInterface> = ({
   const { navigate } = useNavigation();
   const [mounted, setMounted] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [busy, setBusy] = useState(true);
 
   useEffect(() => {
     getPublicRepositories();
@@ -41,10 +42,14 @@ const SearchPage: React.FunctionComponent<RepositoryInterface> = ({
   }, [mounted]);
 
   function getPublicRepositories() {
+    setBusy(true);
     api
       .get("repositories")
       .then((response) => setRepositories(response.data))
-      .finally(() => setMounted(true));
+      .finally(() => {
+        setMounted(true);
+        setBusy(false);
+      });
   }
 
   function handleToggleFiltersVisible() {
@@ -63,10 +68,13 @@ const SearchPage: React.FunctionComponent<RepositoryInterface> = ({
       setIsFiltersVisible(false);
       return;
     }
-
+    setBusy(true);
     api
       .get(`search/repositories?q=${searchTerm}`)
-      .then((response) => setRepositories(response.data.items));
+      .then((response) => setRepositories(response.data.items))
+      .finally(() => {
+        setBusy(false);
+      });
 
     setIsFiltersVisible(false);
   }
@@ -102,26 +110,34 @@ const SearchPage: React.FunctionComponent<RepositoryInterface> = ({
         )}
       </HeaderComponent>
 
-      <ScrollView
-        style={styles.searchPage}
-        contentContainerStyle={{
-          paddingHorizontal: 16,
-          paddingBottom: 16,
-        }}
-      >
-        {repositories.map((repository: RepositoryInterface) => {
-          return (
-            <TouchableWithoutFeedback
-              onPress={() =>
-                handleToggleNavigateToRepositoryDetails(repository)
-              }
-              key={repository.id}
-            >
-              <ItemComponent repository={repository} />
-            </TouchableWithoutFeedback>
-          );
-        })}
-      </ScrollView>
+      {busy ? (
+        <ActivityIndicator
+          size="large"
+          color="#000"
+          style={styles.activityIndicator}
+        />
+      ) : (
+        <ScrollView
+          style={styles.searchPage}
+          contentContainerStyle={{
+            paddingHorizontal: 16,
+            paddingBottom: 16,
+          }}
+        >
+          {repositories.map((repository: RepositoryInterface) => {
+            return (
+              <TouchableWithoutFeedback
+                onPress={() =>
+                  handleToggleNavigateToRepositoryDetails(repository)
+                }
+                key={repository.id}
+              >
+                <ItemComponent repository={repository} />
+              </TouchableWithoutFeedback>
+            );
+          })}
+        </ScrollView>
+      )}
     </View>
   );
 };
