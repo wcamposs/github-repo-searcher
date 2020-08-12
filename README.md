@@ -101,7 +101,9 @@ A new tab will be opened in the default browser with some options to run the pro
 
 3. If you want to run the project on a physical device (Android or iOS):
 
-**Android:** Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the lower left corner on the tab that was automatically opened in the browser using the device's camera.
+**Android:** 
+
+- Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the lower left corner on the tab that was automatically opened in the browser using the device's camera.
 
 **iOS:**
 
@@ -130,26 +132,15 @@ i
 
 **Android:** 
 
-<<<<<<< HEAD
+- - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the terminal using the device's camera.
+
 ## Running the tests
 =======
 - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode displayed in the terminal using the device's camera.
 
-## Running the tests:
->>>>>>> b6ecb5fa5b2391b1851eccbc1df7b679520598b3
-
-Work in progress...
-
 ## Built With:
 
-<<<<<<< HEAD
 - [React Native](https://reactnative.dev/) - The framework used
 - [Expo](https://expo.io/) - Open-source platform for making universal native apps for Android, iOS, and web.
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 - [Gihub REST Api v3](https://developer.github.com/v3/) - Used to get public repositories list and query in public repositories.
-=======
-* [React Native](https://reactnative.dev/) - The framework used
-* [Expo](https://expo.io/) - Open-source platform used to build and serve the application for Android, iOS, and web.
-* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
-* [Gihub REST Api v3](https://developer.github.com/v3/) - Used to get public repositories list and query in public repositories.
->>>>>>> b6ecb5fa5b2391b1851eccbc1df7b679520598b3
