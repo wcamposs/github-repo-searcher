@@ -2,7 +2,7 @@
 
 Application developed in React Native using Typescript for Delivery Much's technical challenge.
 
-**The Application aims to:**  <br/>
+**The Application aims to:** 
 1. List public Github repositories
 2. Searching public Github repositories
 3. View repository details, such as:
@@ -11,11 +11,11 @@ Application developed in React Native using Typescript for Delivery Much's techn
    - Name of the repository
    - Description of the repository
 
-## Prerequisites
+## Prerequisites:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-**Cloning the repository:**
+**Cloning the repository:**  <br/>
 Assuming you have your machine pre-configured to clone github repositories (if you have not configured it, visit [this documentation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)), clone the repository using the following command in the terminal:
 
 ```
