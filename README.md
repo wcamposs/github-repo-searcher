@@ -21,7 +21,8 @@ Application developed in React Native using Typescript for Delivery Much's techn
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-**Cloning the repository:** <br/>
+**Cloning the repository:** 
+
 Assuming you have your machine pre-configured to clone github repositories (if you have not configured it, visit [this documentation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)), clone the repository using the following command in the terminal:
 
 ```
