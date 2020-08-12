@@ -1,5 +1,7 @@
 # Github Repo Searcher
 
+![Working App](https://imgur.com/a/6oQVTef)
+
 ## Description:
 
 Application developed in React Native using Typescript for Delivery Much's technical challenge.
