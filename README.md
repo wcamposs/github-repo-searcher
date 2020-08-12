@@ -84,9 +84,7 @@ A new tab will be opened in the default browser with some options to run the pro
 
 3. If you want to run the project on a physical device (Android or iOS):
 
-**Android**
-
-- install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the lower left corner on the tab that was automatically opened in the browser using the device's camera.
+**Android:** Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the lower left corner on the tab that was automatically opened in the browser using the device's camera.
 
 **iOS:**
 
@@ -111,10 +109,9 @@ i
 
 3. If you want to run the project on a physical device (Android or iOS):
 
-**Android**
+**Android:** 
 
-- install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the terminal using the device's camera.
-
+- Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode displayed in the terminal using the device's camera.
 
 ## Running the tests
 
