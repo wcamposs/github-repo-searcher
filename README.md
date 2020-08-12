@@ -8,7 +8,10 @@ Application developed in React Native using Typescript for Delivery Much's techn
 
 1. List public Github repositories
 2. Searching public Github repositories
-3. View repository details, such as:
+3. View repository list, with the informations:
+   - Name of the repository
+   - Name of the repository owner
+4. View repository details (on click in a repository card), such as:
    - Repository owner avatar
    - Name of the repository owner
    - Name of the repository
