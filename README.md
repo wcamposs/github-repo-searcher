@@ -141,6 +141,6 @@ i
 ## Built With:
 
 - [React Native](https://reactnative.dev/) - The framework used
-- [Expo](https://expo.io/) - Open-source platform for making universal native apps for Android, iOS, and web.
+- [Expo](https://expo.io/) - Open-source platform used for build and serve the application for Android, iOS, and web.
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
-- [Gihub REST Api v3](https://developer.github.com/v3/) - Used to get public repositories list and query in public repositories.
+- [Gihub REST Api v3](https://developer.github.com/v3/) - REST Api used to obtain data from public repositories and also to query public repositories.
