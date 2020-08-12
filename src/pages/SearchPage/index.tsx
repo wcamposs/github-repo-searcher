@@ -16,11 +16,11 @@ import ItemComponent from "../../components/ItemComponent";
 import api from "../../services/api";
 
 import styles from "./styles";
-import { RepositoryProps } from "../RepositoryDetailsPage";
+import { RepositoryInterface } from "../RepositoryDetailsPage";
 
 // USAR "KEYBOARD AVOIDING VIEW" AO SUBIR O TECLADO
 
-const SearchPage: React.FunctionComponent<RepositoryProps> = ({
+const SearchPage: React.FunctionComponent<RepositoryInterface> = ({
   id,
   name,
   owner,
@@ -33,37 +33,42 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    function getPublicRepositories() {
-      api
-        .get("repositories")
-        .then((response) => setRepositories(response.data))
-        .finally(() => setMounted(true));
-    }
+    getPublicRepositories();
 
     if (!mounted) {
       getPublicRepositories();
     }
   }, [mounted]);
 
+  function getPublicRepositories() {
+    api
+      .get("repositories")
+      .then((response) => setRepositories(response.data))
+      .finally(() => setMounted(true));
+  }
+
   function handleToggleFiltersVisible() {
     setIsFiltersVisible(!isFiltersVisible);
   }
 
   function handleToggleNavigateToRepositoryDetails(
-    repository: RepositoryProps
+    repository: RepositoryInterface
   ) {
     navigate("RepositoryDetailsPage", { repository });
   }
 
   function handleSearchSubmit() {
+    if (searchTerm.length === 0) {
+      getPublicRepositories();
+      setIsFiltersVisible(false);
+      return;
+    }
+
     api
       .get(`search/repositories?q=${searchTerm}`)
-      .then((response) => setRepositories(response.data))
-      .finally(() => setMounted(true));
+      .then((response) => setRepositories(response.data.items));
 
     setIsFiltersVisible(false);
-
-    console.log("Search term: ", searchTerm);
   }
 
   return (
@@ -104,7 +109,7 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({
           paddingBottom: 16,
         }}
       >
-        {repositories.map((repository: RepositoryProps) => {
+        {repositories.map((repository: RepositoryInterface) => {
           return (
             <TouchableWithoutFeedback
               onPress={() =>
