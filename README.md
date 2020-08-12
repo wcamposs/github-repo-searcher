@@ -1,6 +1,6 @@
 # Github Repo Searcher
 
-![Working App](https://imgur.com/a/6oQVTef)
+![](https://imgur.com/a/6oQVTef)
 
 ## Description:
 
