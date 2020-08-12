@@ -30,6 +30,7 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({
   const [repositories, setRepositories] = useState([]);
   const { navigate } = useNavigation();
   const [mounted, setMounted] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     function getPublicRepositories() {
@@ -54,8 +55,15 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({
     navigate("RepositoryDetailsPage", { repository });
   }
 
-  async function handleFiltersSubmit() {
+  function handleSearchSubmit() {
+    api
+      .get(`search/repositories?q=${searchTerm}`)
+      .then((response) => setRepositories(response.data))
+      .finally(() => setMounted(true));
+
     setIsFiltersVisible(false);
+
+    console.log("Search term: ", searchTerm);
   }
 
   return (
@@ -73,14 +81,14 @@ const SearchPage: React.FunctionComponent<RepositoryProps> = ({
             <Text style={styles.label}>Repositório</Text>
             <TextInput
               style={styles.input}
-              //value={publicRepo}
-              //onChangeText={text => setPublicRepo(text)}
+              value={searchTerm}
+              onChangeText={(searchTerm) => setSearchTerm(searchTerm)}
               placeholder="Procure por um repositório público"
               placeholderTextColor="#595857"
             />
 
             <RectButton
-              //onPress={handleFiltersSubmit}
+              onPress={() => handleSearchSubmit()}
               style={styles.submitButton}
             >
               <Text style={styles.submitButtonText}>Buscar</Text>
