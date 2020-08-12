@@ -85,7 +85,7 @@ const SearchPage: React.FunctionComponent<RepositoryInterface> = ({
         title="Buscar Repositórios"
         headerRight={
           <BorderlessButton onPress={handleToggleFiltersVisible}>
-            <Feather name="search" size={20} color="#FFF" />
+            <Feather name="search" size={25} color="#FFF" />
           </BorderlessButton>
         }
       >
