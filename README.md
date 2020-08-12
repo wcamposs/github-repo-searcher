@@ -7,7 +7,7 @@ Application developed in React Native using Typescript for Delivery Much's techn
 **The Application aims to:**
 
 1. List public Github repositories
-2. Searching public Github repositories
+2. Search public Github repositories
 3. View repository list, with the informations:
    - Name of the repository
    - Name of the repository owner
