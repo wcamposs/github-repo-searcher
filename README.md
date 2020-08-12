@@ -136,10 +136,6 @@ i
 
 **Android:** 
 
-- - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode that is displayed in the terminal using the device's camera.
-
-## Running the tests
-=======
 - Install the Expo app on the device through the app store. After installation, run the application, select the option **scan with QRCode** and scan the QRCode displayed in the terminal using the device's camera.
 
 ## Built With:
