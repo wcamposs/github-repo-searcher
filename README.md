@@ -101,7 +101,7 @@ A new tab will be opened in the default browser with some options to run the pro
 - Run on Android device / emulator
 - Run on iOS simulator
 
-1. If you want to run through the browser, select the option:
+2. If you want to run through the browser, select the option:
 
 - Run in web browser
 
