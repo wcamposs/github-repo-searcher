@@ -4,7 +4,7 @@
 
 ## Description:
 
-Application developed in React Native using Typescript for Delivery Much's technical challenge.
+Application developed in React Native using Typescript and Axios.
 
 **The Application aims to:**
 
